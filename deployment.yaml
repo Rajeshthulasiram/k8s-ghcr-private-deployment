@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: private-nginx
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: private-nginx
+  template:
+    metadata:
+      labels:
+        app: private-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/rajesh-dev/my-k8s-app:latest
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: ghcr-secret
