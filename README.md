@@ -43,13 +43,7 @@ To make it public, go to: 👉 GitHub → Profile → Packages → Click your im
 🔹 Step 5: Create a Namespace
 kubectl create namespace dev
 
-🔹 Step 6: Create the imagePullSecret
-kubectl create secret docker-registry ghcr-secret \
-  --docker-server=https://ghcr.io \
-  --docker-username=rajesh-dev \
-  --docker-password=ghp_xxx123YourToken \
-  --docker-email=rajesh@example.com \
-  --namespace=dev
+🔹 Step 6: Create the imagePullSecret file (k8s/secret-create.sh)
 
 🔹 Step 7: Deploy the Pod Using Your Image
 Create deployment.yaml:
